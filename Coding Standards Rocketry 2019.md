@@ -84,7 +84,7 @@ Operators
 Brackets
 --------
 - No padding between parenthesis.
-- Space after function def and before curly brackets (for short get/set functions only).
+- Short functions (e.g. get and set), can have incline curly brackets. Padding between the def and the backets must be used.
 - Builtins use inline curly brackets, function defs use newline curly brackets
   
   ~~~cpp
@@ -104,22 +104,12 @@ Brackets
 
 Classes, structures
 -------------------
-- Structures initialized with dot notation require newlines, wheras when you use commas, it's inline
-- Struc
+- Each variable inside a struct must have its own line when using dot notation
+- If using dot notation for structs, it can be inline
 - Public and private and protected are on the same indentation as the class
 - Classes and structures have curly brackets inline
   
   ~~~cpp
-
-    strct new_strct = {
-        .i = 1;
-        .j = 2;
-        .k = 3;
-    };
-
-    strct new_strct = {1, 2, 3};
-
-
     class someClassHere {
     public:
       //stuff
@@ -129,13 +119,20 @@ Classes, structures
       //stuff
     };
 
-
+    // Showing correct curly brackets here
     typedef struct new_struct {
       int i;
       int j;
       int k;
     } new_struct;
 
-    class something {
+    // Structure example with dot notation
+    strct new_strct = {
+        .i = 1;
+        .j = 2;
+        .k = 3;
     };
+
+    // Struct example without dot notation
+    strct new_strct = {1, 2, 3};
     ~~~
