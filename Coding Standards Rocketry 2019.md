@@ -11,133 +11,106 @@ Software standards
 
 Naming
 ------
-`const` and `#define` statements use all caps with underscores when spaces are nescessary.
-  ~~~cpp
-    #define HELLOWORLD 1
-    const NUMBER_SEVEN 7;
-  ~~~
+- `const` and `#define` statements use all caps with underscores when spaces are nescessary.
+- Anything part of a class must be in camel case.
+- Outside of classes, use lowercase with underscores for naming
 
-Anything part of a class must be in camel case.
-  ~~~cpp
-    // Class name, the class variables 
-    // and the class functions are in camel case
-    class helloWorldClass {
-    public:
-      int helloWorld;
-      int goodbyeWorld;
+~~~cpp
+  #define HELLO_WORLD 1
+  const int NUMBER = 72;
 
-      // Passed vars use underscores; they're not part of the class
-      int functionOne(int variable_one);
-    };
-  ~~~
+  class helloWorldClass {
+  public:
+    int helloWorld;
 
-Outside of classes, use lowercase with underscores for naming
-  ~~~cpp
-    int function_two(int variable_two);
-    helloWorldClass hello_world;
-  ~~~
+    // NOTE: passed vars in class' functions are lowercase, since they're not strictly stored in the class
+    int functionOne(int variable_one);
+  };
+
+  int function_two(int variable_two);
+  helloWorldClass hello_world;
+~~~
 
 Whitespace
 ----------
-Set your editor to save in spaces (4 for a tab). Most editors have a way to set whether you use tabs or spaces and allow you to emulate the other mode. 
+- Use spaces not tabs (4 as a standard).
+- Commas must have spaces after them.
+- No space between function and opening parenthesis.
+- Space after semicolon if code continues on the same line.
+- Conditional calls (eg else after if) on a new line.
+- Do not nest question mark statements.
+- Values for defines must be aligned in their code blocks/
 
-Spaces after commas
   ~~~cpp
-    int a, b, c = 0; // Do this
-    int a,b,c = 0; // Not this
-  ~~~
+    // This shows the proper alignment of define macro values
+    #define HELLO_WORLD                                       22
+    #define HELLO_MY_BABY_HELLO_MY_HONEY_HELLO_MY_RAGTIME_GAL 420
 
-No space between function and opening parenthesis
-  ~~~cpp
-    function_two(intNum); // VS
-    function_two (intNum); // Wrong
-  ~~~
-
-Space after semicolon if code continues inline (eg: code1; code2;)
-  ~~~cpp
+    // The block below shows examples for proper spacing of commas and semicolons
     int a; bool b;
+    int a, b, c = 0;
+
+    // This is an example of function calls, builtin calls, as well as spacing for conditionals
+    if (some_test) {
+      function_two(intNum);
+    }
+    else {
+      hello_world.functionOne(intNum);
+    };
   ~~~
 
-Conditional calls (if, else) on newline
+
+Operators
+---------
+- Brackets for the condition of the question mark operator
+- Use of question mark operator stays on one line. If the line becomes too long, use if/else instead.
+- Operators require spaces on either side.
+- The block comment operators require their own lines.
+- Comments require a new line before them, as well as spaces after comment operator.
+
   ~~~cpp
-    if (condition) {}
-    else {}
-
-    // This version is incorrect
-    if (condition){
-    } else {}
-  ~~~
-
-Question mark operator on one line, when vars are too long use if/else (don't nest them)
-  ~~~cpp
-    if 0;
-    else (b = (2 == c) ? 1 : 2);
-  ~~~
-
-Operators require spaces on either side
-  ~~~cpp
-    a = (1 + 2 / (1 * 72)); // Do this
-    a = (1+2/(1*72)); // Instead of this
-  ~~~  
-
-Values for defines must be aligned in their code blocks
-  ~~~cpp
-    #define FSHFDH         5
-    #define FHDSJKLFHDSLKJ 8
-    #define JFJKDLG        12
-  ~~~
-
-Newlines for comment block
-    ~~~cpp
     /*
-      This is correct
+    This shows the proper usage of a block comment
     */
+    if (0) {
+      a = (1 + 2 / (1 * 72));
+    }
+    else (b = (2 == c) ? 1 : 2);
 
-    /* This is not
-    */
+    // This and the previos lines show proper usage of operator spacing, question mark usage and commenting
   ~~~
 
-Comments require a new line before them, as well as spaces after comment operator
-  ~~~cpp
-    some code here;
-
-    //AHHH NO WRONG
-  ~~~
 
 Brackets
 --------
-Brackets for the condition of the question mark operator
-    ~~~cpp
-    b = (2 == c) ? 1 : 2; // VS
-    b = 2 == c ? 1 : 2;
-  ~~~
-
-No spaces after opening or before closing brackets
+- No padding between parenthesis.
+- Space after function def and before curly brackets (for short get/set functions only).
+- Builtins use inline curly brackets, function defs use newline curly brackets
+  
   ~~~cpp
-    function_two(variable_two) // Good
-    function_two( variable_two ) // Bad
-  ~~~
+    int some_function_name(void) {return someVar}
 
-Space after function def and before curly brackets
-  ~~~cpp
-    int some_function_name(bool some_var) {} // This is correct
-    int some_function_name(bool some_var){} // This is wrong
-  ~~~
-
-Builtins use inline curly brackets, function defs use newline curly brackets
-  ~~~cpp
     int function(long num)
     {
+      // function definition here
     }
 
-    for (int i = 0; i < 10000000000; i++){
+    function(number + 1) // No space betwwen parentheses
+
+    for (int i = 0; i < 10000000000; i++) {  // Inline curly bracket
     }
   ~~~
+
 
 Classes, structures
 -------------------
-Structures initialized with dot notation require newlines, wheras when you use commas, it's inline
-    ~~~cpp
+- Structures initialized with dot notation require newlines, wheras when you use commas, it's inline
+- Struc
+- Public and private and protected are on the same indentation as the class
+- Classes and structures have curly brackets inline
+  
+  ~~~cpp
+
     strct new_strct = {
         .i = 1;
         .j = 2;
@@ -145,10 +118,8 @@ Structures initialized with dot notation require newlines, wheras when you use c
     };
 
     strct new_strct = {1, 2, 3};
-  ~~~
 
-Public and private and protected are on the same indentation as the class
-  ~~~cpp
+
     class someClassHere {
     public:
       //stuff
@@ -157,10 +128,8 @@ Public and private and protected are on the same indentation as the class
     protected:
       //stuff
     };
-  ~~~
 
-Classes and structures have curly brackets inline
-  ~~~cpp
+
     typedef struct new_struct {
       int i;
       int j;
@@ -169,4 +138,4 @@ Classes and structures have curly brackets inline
 
     class something {
     };
-  ~~~
+    ~~~
