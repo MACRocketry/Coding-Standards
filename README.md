@@ -3,7 +3,7 @@ Coding Standards
 
 What is this?
 -------------
-This is an in-progress document that clarifies our coding Standards
+This is an in-progress document that clarifies our coding Standards. Click on "Coding Standards Rocketry 2019.md" or the pdf version to look at it.
 
 How to compile?
 ---------------

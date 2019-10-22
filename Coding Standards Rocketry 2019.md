@@ -23,7 +23,8 @@ Naming
   public:
     int helloWorld;
 
-    // NOTE: passed vars in class' functions are lowercase, since they're not strictly stored in the class
+    // NOTE: passed vars in class' functions are lowercase,
+    // since they're not strictly stored in the class
     int functionOne(int variable_one);
   };
 
@@ -50,7 +51,8 @@ Whitespace
     int a; bool b;
     int a, b, c = 0;
 
-    // This is an example of function calls, builtin calls, as well as spacing for conditionals
+    // This is an example of function calls, builtin calls,
+    // as well as spacing for conditionals
     if (some_test) {
       function_two(intNum);
     }
@@ -77,7 +79,8 @@ Operators
     }
     else (b = (2 == c) ? 1 : 2);
 
-    // This and the previos lines show proper usage of operator spacing, question mark usage and commenting
+    // This and the previos lines show proper usage of operator spacing,
+    // question mark usage and commenting
   ~~~
 
 
