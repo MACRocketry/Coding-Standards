@@ -15,22 +15,22 @@ Naming
 - Anything part of a class must be in camel case.
 - Outside of classes, use lowercase with underscores for naming
 
-~~~cpp
-  #define HELLO_WORLD 1
-  const int NUMBER = 72;
+  ~~~cpp
+    #define HELLO_WORLD 1
+    const int NUMBER = 72;
 
-  class helloWorldClass {
-  public:
-    int helloWorld;
+    class helloWorldClass {
+    public:
+      int helloWorld;
 
-    // NOTE: passed vars in class' functions are lowercase,
-    // since they're not strictly stored in the class
-    int functionOne(int variable_one);
-  };
+      // NOTE: passed vars in class' functions are lowercase,
+      // since they're not strictly stored in the class
+      int functionOne(int variable_one);
+    };
 
-  int function_two(int variable_two);
-  helloWorldClass hello_world;
-~~~
+    int function_two(int variable_two);
+    helloWorldClass hello_world;
+  ~~~
 
 Whitespace
 ----------
