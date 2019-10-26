@@ -34,6 +34,7 @@ Naming
 
 Whitespace
 ----------
+- Standard libraries are included and grouped before other includes
 - Use spaces not tabs (4 as a standard).
 - Commas must have spaces after them.
 - No space between function and opening parenthesis.
@@ -43,6 +44,12 @@ Whitespace
 - Values for defines must be aligned in their code blocks/
 
   ~~~cpp
+    // Showing the incldue rule
+    #include <stdio.h>
+    #include <stdint.h>
+
+    #include "someCutomLib.h"
+
     // This shows the proper alignment of define macro values
     #define HELLO_WORLD                                       22
     #define HELLO_MY_BABY_HELLO_MY_HONEY_HELLO_MY_RAGTIME_GAL 420
